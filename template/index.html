@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="css/main.css">
+</head>
+<body>
+  <div id="app">
+    <!-- v-once -->
+    <p v-once>{{message}}</p>
+    <button v-on:click="clickHandler">Click</button>
+    <!-- v-pre -->
+    <p v-pre>{{message}}</p>
+    <!-- v-html -->
+    <p v-html="htmlMessage"></p>
+    <!-- v-cloak -->
+    <p v-cloak>{{message}}</p>
+    <!-- v-text -->
+    <h2>v-text</h2>
+    <p v-text="message"></p>
+    <!-- js式 -->
+    <p>{{number + 1}}</p>
+    <p>{{message.split("").reverse().join("")}}</p>
+    <p>{{ok ? "Yes": "No"}}</p>
+    <!-- v-bind省略式 -->
+    <a v-bind:href="url">Link to Google</a>
+    <br>
+    <a :href="url">Link to Google</a>
+  </div>
+  <script src="https://unpkg.com/vue@3.1.5"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>

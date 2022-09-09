@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="css/main.css">
+</head>
+<body>
+  <div id="app">
+    <p>{{ message }}</p>
+    <!-- v-model利用時はvalueなどの属性は無視される -->
+    <input type="text" v-model="message">
+    <br>
+    <textarea v-model="message">{{message}}</textarea>
+    <br>
+    <label for="checkbox">{{checked}}</label>
+    <input type="checkbox" id="checkbox" v-model="checked">
+    <br>
+    <label for="red">red</label>
+    <input type="checkbox" id="red" value="red" v-model="colors"> 
+    <label for="green">green</label>
+    <input type="checkbox" id="green" value="green" v-model="colors"> 
+    <label for="blue">blue</label>
+    <input type="checkbox" id="blue" value="blue" v-model="colors">
+    <br>
+    <input type="radio" id="red" value="red" v-model="color">
+    <label for="red">red</label>
+    <input type="radio" id="green" value="green" v-model="color">
+    <label for="red">green</label>
+    <input type="radio" id="blue" value="blue" v-model="color">
+    <label for="red">blue</label>
+    <p>{{color}}</p>
+    <br>
+    <select v-model="selected">
+      <option disabled>select one</option>
+      <option>red</option>
+      <option>green</option>
+      <option>blue</option>
+    </select>
+    <p>{{selected}}</p>
+    <br>
+    <select v-model="selectedMulti" multiple>
+      <option disabled>select one</option>
+      <option>red</option>
+      <option>green</option>
+      <option>blue</option>
+    </select>
+    <br>
+    <h2>lazy</h2>
+    <input type="text" v-model.lazy="lazyMessage">
+    <p>{{lazyMessage}}</p>
+    <h2>trim</h2>
+    <input type="text" v-model.trim="trimMessage">
+    <input type="text" v-model="trimMessage">
+    <p>{{trimMessage}}</p>
+    <h2>number</h2>
+    <input type="number" v-model.number="age">
+    <p>{{age + 10}}</p>
+  </div>
+  <script src="https://unpkg.com/vue@3.1.5"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="css/main.css">
+</head>
+<body>
+  <div id="app">
+    <p>Hello <span class="bg-gray text-blue" v-bind:class="{large: isLarge, 'text-danger': hasError}">Vue3</span></p>
+    <p>Hello <span v-bind:class="largeClass">Vue3</span></p>
+    <p>Hello <span v-bind:class="[largeClass, dangerClass]">Vue3</span></p>
+    <p>Hello <span v-bind:class="classObject">Vue3</span></p>
+    <p>Hello <span v-bind:class="isLarge ? largeClassObject: ''">Vue3</span></p>
+    <p>Hello <span v-bind:class="[isLarge ? largeClassObject: '', dangerClassObject]">Vue3</span></p>
+    <p>Hello <span v-bind:style="{color: color, fontSize: fontSize + 'px'}">Vue3</span></p>
+    <p>Hello <span v-bind:style="styleObject">Vue3</span></p>
+  </div>
+  <script src="https://unpkg.com/vue@3.1.5"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>
